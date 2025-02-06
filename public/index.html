@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <script src="form.js"></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
+
+    <div id="intro">
+      <div>
+        <h2>Career Compass Quiz</h2>
+        <p>
+          There are thousands of careers in this world to learn about, some of
+          which might be right for you, and some which will not be. But how to
+          find out which one is which? Narrowing down which careers to learn
+          more about, and eventually pursue, can be a real challenge. Our Career
+          Compass Quiz is a good place to start if you want to get pointed in
+          the right direction.
+        </p>
+        <button id="start-button" class="submit-btn">
+          Start your Career Compass Quiz Now
+        </button>
+      </div>
+      <div class="retrieve-container">
+        <h4>Already completed a Career Compass Quiz?</h4>
+        <p>
+          If you shared your email when you took your quiz, enter it here now to
+          see your saved results.
+        </p>
+        <form id="fetch-form" class="fetch-form">
+          <div class="form-field">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div id="container"></div>
+          <button class="write-button submit-btn" type="submit">Send</button>
+          <!-- <button 
+        data-sitekey="reCAPTCHA_site_key" 
+        data-callback='onSubmit' 
+        data-action='submit' class="write-button submit-btn g-recaptcha" type="submit">Send</button> -->
+        </form>
+      </div>
+    </div>
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+    <div id="dynamic-form"></div>
+
+    <div id="resultsSection">
+      <h2>Career Suggestions</h2>
+      <p>
+        Based on your answers to the Career Compass Quiz, here are a few careers
+        you might find interesting. Check them out! If for some reason you don’t
+        see something you like, you can always search through the Real Work Talk
+        Career Catalog to explore all jobs.
+      </p>
+      <div id="results-container"></div>
+      <form id="contact-form" class="contact-form">
+        <div class="retrieve-container">
+          <h4>Save Your Results</h4>
+          <p>
+            Want to save your career suggestions so that you can come back to
+            see them later? Share your email with us, and we’ll save your
+            results for you. Then when you come back to the Career Compass Quiz
+            in the future you can simply enter your email address at the start
+            of the quiz and you’ll be taken right to your results.
+          </p>
+          <br />
+          <div class="form-field">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-field">
+            <label class="confirmation-label" for="confirmation">
+              <input
+                required
+                type="checkbox"
+                id="confirmation"
+                name="confirmation"
+              />
+              <span
+                >I accept the
+                <a
+                  href="https://plums-tunny-jf8b.squarespace.com/privacy-policy"
+                  target="_blank"
+                  >privacy policy</a
+                >
+                and
+                <a
+                  href="https://plums-tunny-jf8b.squarespace.com/terms-conditions"
+                  target="_blank"
+                  >terms and conditions</a
+                >.</span
+              >
+            </label>
+          </div>
+          <div id="container"></div>
+          <button class="write-button submit-btn" type="submit">Send</button>
+          <!-- <button 
+        data-sitekey="reCAPTCHA_site_key" 
+        data-callback='onSubmit' 
+        data-action='submit' class="write-button submit-btn g-recaptcha" type="submit">Send</button> -->
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

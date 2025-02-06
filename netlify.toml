@@ -1,0 +1,28 @@
+[build]
+  functions = "functions"
+
+[dev]
+  command = "npm start"
+  port = 8888
+  targetPort = 3000
+  framework = "#auto"
+
+[[redirects]]
+  from = "/api/careers"
+  to = "/.netlify/functions/careers"
+  status = 200
+
+[[redirects]]
+  from = "/api/questions"
+  to = "/.netlify/functions/questions"
+  status = 200
+
+[[redirects]]
+  from = "/api/write"
+  to = "/.netlify/functions/write"
+  status = 200
+
+[[redirects]]
+  from = "/api/user"
+  to = "/.netlify/functions/user"
+  status = 200

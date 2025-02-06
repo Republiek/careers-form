@@ -134,7 +134,6 @@ function generateForm(questions, careers, images) {
         const label = document.createElement("label");
         const radio = document.createElement("input");
         radio.type = "radio";
-        radio.checked = true;
         radio.name = `question${start + index + 1}`;
         radio.value = points;
         radio.required = true;

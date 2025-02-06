@@ -294,9 +294,7 @@ function generateForm(questions, careers, images) {
 
       careerImage.src = career.imageLink;
       careerImage.alt = career.name;
-      careerElement.textContent = `${index + 1}. ${career.name} ${
-        career.percentage
-      }%`;
+      careerElement.textContent = `${index + 1}. ${career.name}`;
       careerLink.href = career.pageLink;
       careerLink.textContent = "CLICK HERE FOR FULL CAREER DETAILS";
       careerLink.target = "_blank";
@@ -402,9 +400,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           careerImage.src = career.imageLink;
           careerImage.alt = career.name;
-          careerElement.textContent = `${index + 1}. ${career.name} ${
-            career.percentage
-          }%`;
+          careerElement.textContent = `${index + 1}. ${career.name}`;
           careerLink.href = career.pageLink;
           careerLink.textContent = "CLICK HERE FOR FULL CAREER DETAILS";
           careerLink.target = "_blank";

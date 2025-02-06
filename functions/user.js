@@ -12,7 +12,10 @@ exports.handler = async function (event, context) {
 
     const data = await response.json();
 
-    const entry = data.values.find((entry) => entry[1] === email);
+    const entry = data.values
+      .slice()
+      .reverse()
+      .find((entry) => entry[1] === email);
 
     return {
       statusCode: 200,

@@ -229,19 +229,22 @@ function generateForm(questions, careers, images) {
     resultsSection.style.display = "block";
     contactForm.style.display = "block";
     resultsContainer.style.display = "grid";
-    resultsContainer.style.gap = "2rem";
 
     if (window.innerWidth >= 600) {
       resultsContainer.style.gridTemplateColumns = "1fr 1fr";
+      resultsContainer.style.columnGap = "4rem";
     } else {
       resultsContainer.style.gridTemplateColumns = "1fr";
+      resultsContainer.style.columnGap = "0rem";
     }
 
     window.addEventListener("resize", () => {
       if (window.innerWidth >= 600) {
         resultsContainer.style.gridTemplateColumns = "1fr 1fr";
+        resultsContainer.style.columnGap = "4rem";
       } else {
         resultsContainer.style.gridTemplateColumns = "1fr";
+        resultsContainer.style.columnGap = "0rem";
       }
     });
 
@@ -402,19 +405,21 @@ document.addEventListener("DOMContentLoaded", function () {
         const resultsContainer = document.getElementById("results-container");
 
         resultsContainer.style.display = "grid";
-        resultsContainer.style.gap = "2rem";
 
         if (window.innerWidth >= 600) {
           resultsContainer.style.gridTemplateColumns = "1fr 1fr";
+          resultsContainer.style.columnGap = "4rem";
         } else {
           resultsContainer.style.gridTemplateColumns = "1fr";
+          resultsContainer.style.columnGap = "0rem";
         }
-
         window.addEventListener("resize", () => {
           if (window.innerWidth >= 600) {
             resultsContainer.style.gridTemplateColumns = "1fr 1fr";
+            resultsContainer.style.columnGap = "4rem";
           } else {
             resultsContainer.style.gridTemplateColumns = "1fr";
+            resultsContainer.style.columnGap = "0rem";
           }
         });
 

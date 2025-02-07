@@ -159,7 +159,11 @@ function generateForm(questions, careers, images) {
 
     const navWrapper = document.createElement("div");
     navWrapper.classList.add("nav-wrapper");
-
+    const errorMessage = document.createElement("p");
+    errorMessage.textContent = "Please answer all questions before proceeding.";
+    errorMessage.style.color = "red";
+    errorMessage.style.display = "none"; // Hide the error message initially
+    navWrapper.appendChild(errorMessage);
     if (page > 0) {
       const prevButton = document.createElement("button");
       prevButton.type = "button";
@@ -179,12 +183,6 @@ function generateForm(questions, careers, images) {
       nextButton.textContent = "Next";
       nextButton.classList.add("nav-btn");
 
-      const errorMessage = document.createElement("p");
-      errorMessage.textContent =
-        "Please answer all questions before proceeding.";
-      errorMessage.style.color = "red";
-      errorMessage.style.display = "none"; // Hide the error message initially
-
       nextButton.addEventListener("click", () => {
         if (!validateForm(page)) {
           errorMessage.style.display = "block"; // Show the error message
@@ -195,7 +193,7 @@ function generateForm(questions, careers, images) {
         renderPage(page + 1);
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
-      navWrapper.appendChild(errorMessage);
+
       navWrapper.appendChild(nextButton);
     } else {
       const submitButton = document.createElement("button");

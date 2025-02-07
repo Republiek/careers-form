@@ -65,6 +65,11 @@ app.get("/api/user", async (req, res) => {
 
     const entry = data.values.find((entry) => entry[1] === email);
 
+    if (!entry) {
+      res.status(400).json({ error: "User not found" });
+      return;
+    }
+
     res.status(200).json(entry);
   } catch (error) {
     res.status(500).json({ error: error.message });

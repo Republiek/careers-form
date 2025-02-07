@@ -363,6 +363,8 @@ function generateForm(questions, careers, images) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const startBtn = document.getElementById("start-button");
+  const errorText = document.getElementById("error-text");
+  errorText.style.display = "none"; // Hide the error message initially
 
   startBtn.addEventListener("click", function () {
     document.getElementById("intro").style.display = "none";
@@ -374,7 +376,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   fetchForm.addEventListener("submit", function (event) {
     event.preventDefault();
-
+    errorText.style.display = "none";
     const formData = new FormData(fetchForm);
     const email = formData.get("email");
 
@@ -384,6 +386,12 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
+        if (data.error) {
+          errorText.style.display = "block";
+          fetchForm.reset(); // Reset the form
+          return;
+        }
+
         document.getElementById("intro").style.display = "none";
 
         // Create a section to display results
@@ -439,6 +447,8 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch((error) => {
         console.error("Error:", error);
+        fetchForm.reset(); // Reset the form
+        errorText.style.display = "block";
       });
   });
 });

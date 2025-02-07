@@ -17,6 +17,11 @@ exports.handler = async function (event, context) {
       .reverse()
       .find((entry) => entry[1] === email);
 
+    if (!entry) {
+      res.status(400).json({ error: "User not found" });
+      return;
+    }
+
     return {
       statusCode: 200,
       body: JSON.stringify(entry),

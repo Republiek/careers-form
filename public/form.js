@@ -178,15 +178,24 @@ function generateForm(questions, careers, images) {
       nextButton.type = "button";
       nextButton.textContent = "Next";
       nextButton.classList.add("nav-btn");
+
+      const errorMessage = document.createElement("p");
+      errorMessage.textContent =
+        "Please answer all questions before proceeding.";
+      errorMessage.style.color = "red";
+      errorMessage.style.display = "none"; // Hide the error message initially
+
       nextButton.addEventListener("click", () => {
         if (!validateForm(page)) {
-          alert("Please answer all questions before proceeding.");
+          errorMessage.style.display = "block"; // Show the error message
           return;
         }
+        errorMessage.style.display = "none"; // Hide the error message
         saveFormData();
         renderPage(page + 1);
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
+      navWrapper.appendChild(errorMessage);
       navWrapper.appendChild(nextButton);
     } else {
       const submitButton = document.createElement("button");

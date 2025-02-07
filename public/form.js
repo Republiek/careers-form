@@ -350,7 +350,6 @@ function generateForm(questions, careers, images) {
         .then((data) => {
           console.log("Success:", data);
           if (data.success === "true") {
-            alert("We have recieved your response. Thank you!");
             contactForm.reset(); // Reset the form
           } else {
             alert("Something went wrong. Please try again.");

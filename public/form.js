@@ -387,6 +387,21 @@ document.addEventListener("DOMContentLoaded", function () {
         const resultsContainer = document.getElementById("results-container");
 
         resultsContainer.style.display = "grid";
+        resultsContainer.style.gap = "2rem";
+
+        if (window.innerWidth >= 600) {
+          resultsContainer.style.gridTemplateColumns = "1fr 1fr";
+        } else {
+          resultsContainer.style.gridTemplateColumns = "1fr";
+        }
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 600) {
+            resultsContainer.style.gridTemplateColumns = "1fr 1fr";
+          } else {
+            resultsContainer.style.gridTemplateColumns = "1fr";
+          }
+        });
 
         const items = JSON.parse(data[3]);
 
